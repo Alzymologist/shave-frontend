@@ -1,0 +1,20 @@
+<?php /* установка тэга META
+
+{<b></b>_META: &lt;meta http-equiv="refresh" content="1;URL=http://ab-w.net"&gt; _<b></b>} - такой модуль формирует в заголовке страницы новый тэг мета как указан
+
+{<b></b>_META: author Leonid Kaganov _<b></b>} - такой модуль формирует в заголовке страницы новый 
+тэг мета с указанными аргументами: &lt;meta name="author" content="Leonid Kaganov"&gt; Разделителем аргументов считается первый пробел, поскольку имя тэга, насколько я помню, содержать пробелов не должно.
+*/
+
+function META($e) {
+    if('<'==$e[0]) {
+	$e=trim($e,'<>');
+    } else {
+	list($n,$v)=explode(" ",$e,2);
+//	$GLOBALS['_META'][]='<meta name="'.h(c($n)).'" content="'.h(c($v)).'">';
+	$e='meta name="'.h(c($n)).'" content="'.h(c($v)).'"';
+    }
+    $GLOBALS['_HEADD'][$e]=$e;
+    return '';
+}
+?>

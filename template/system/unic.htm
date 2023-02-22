@@ -1,0 +1,53 @@
+<div class='legend' onclick="cpbuf(this.querySelector('B'))">личная карточка <b>{id}</b></div>
+
+<div class=r>
+<div id='openidotvet'></div>
+{?img:|:|*:<img src='{#img}' align='right'>|?}
+<div style='font-weight:bold;font-size:16px'>{imgicourl}</div>
+
+<p><INPUT type='button' value='Послать сообщение' onclick="Mailbox.write({id})"">
+
+<div class=br>аккаунт: {?loginlevel:
+3:<font color=green>авторизован</font>
+2:<font color=red>не авторизован</font>
+*:<font color=red>пустой</font>
+?}</div>
+<div class=br>создан: {#time_reg}</div>
+<div class=br alt='Время первого захода на последнюю из прочитанных страниц,<br>повторные заходы не фиксируются и вообще слежка не ведется.'>был на сайте: {#last}</div>
+
+{?podzamok:
+1:<br>&nbsp;{?admin:|podzamok:<i class='e_podzamok'></i>|*:|?}&nbsp;{admin}
+*:
+?}
+
+{?sysadmin:
+1:<br>доступ:&nbsp;{set_dostup}<br>карма:&nbsp;{set_karma}<br>{?ip:|0:|:|*:&nbsp;IP Yandex:&nbsp;<a target='_blank' href='http://yandex.ru/yandsearch?text=%22{#ip}%22'>{#ip}</a><br>&nbsp;IP Wiki:&nbsp;<a target='_blank' href='http://ru.wikipedia.org/w/index.php?limit=50&tagfilter=&title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F%3A%D0%92%D0%BA%D0%BB%D0%B0%D0%B4&contribs=user&target={#ip}&namespace=&tagfilter=&year=&month=-1'>{#ip}</a>|?}
+*:
+?}
+
+{?openid:|:|*:<br>ident:&nbsp;<a target='_blank' href='{#openid}'>{#openid}</a>|?}
+{?login:|:|*:<br>login:&nbsp;{#login}|?}
+{?password:|:|*:<br>password:&nbsp;*****|?}
+{?realname:|:|*:<br>realname:&nbsp;{#realname}|?}
+
+{?mail:
+:
+*:<br>mail:&nbsp;{?sysadmin:|1:<a target='_blank' href='mailto:{#mail}'>{#mail}</a>|*:указан|?}&nbsp;<font color={?mail_confirm:|0:'red'>не подтвержден|1:'green'>подтвержден{?mail_comment:|1:, подписан на ответы|*:|?}|*:'blue'>хз|?}</font>
+
+?}
+{?mailw:|:|{mail}:=|*:<br>mailw:&nbsp;{?sysadmin:|1:{#mailw}|*:указан|?}|?}
+
+{?tel:|:|*:<br>tel:&nbsp;{?sysadmin:|1:{#tel}|*:указан|?}|?}
+{?telw:|:|*:<br>telw:&nbsp;{?sysadmin:|1:{#telw}|*:указан|?}|?}
+
+{?site:|:|*:<br>site:&nbsp;<a target='_blank' href='{#site}'>{#site}</a>|?}
+
+{?birth:|0000-00-00:|*:<br>дата&nbsp;рождения:&nbsp;{#birth}|?}
+
+<p>комментарии: {?ncomm:|0:нет|*:<span class=ll onclick="majax('okno.php',{a:'hiscomment',id:{id},n:{ncomm}})">показать {ncomm}</span>|?}
+
+<p>забанить: <span class='ll'
+onmouseover="var r=f5_read('ueban'),p=r?r.split(','):[],e=in_array({id},p); this.innerHTML=e?'разбанить?':'забанить?';"
+onclick="var s,r=f5_read('ueban'),p=r?r.split(','):[],e=in_array({id},p); if(e){ delete(p[e]); s='забанить?'; } else { p.push({id}); s='разбанить?'; } this.innerHTML=s;f5_save('ueban',p.join(','));">да?</span>
+
+</div>

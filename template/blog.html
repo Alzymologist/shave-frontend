@@ -1,0 +1,506 @@
+{_SNAPSHOT:_}{_MAIN:_}{_SIGNAL:log=rkm1.log_}<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="{wwwcharset}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset={wwwcharset}">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+<meta name="Description" content="Леонид Каганов, дневник {_TITLE:_}" />
+
+<!-- Смотреть вид ссылки в этом фобаном фейсбуке: https://developers.facebook.com/tools/debug/sharing/ -->
+<meta property="og:url" content="{link}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{admin_name}: {_TITLE:_}" />
+<meta property="og:description" content="{_TITLE:_}" />
+<meta property="og:image" content="{LINK}" / >
+<!-- meta property="og:image" content="{acc_link}design/userpick/lleo2018.jpg" / -->
+<meta property="ia:rules_url" content="{acc_link}whatis" />
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+{_STYLE_ADD: {www_css}sys.css?{_PHPEVAL: $o=rand(0,10000);_} _}
+{_NO:
+
+STYLE_ADD: {www_css}animate.css
+
+SCRIPTS: page_onstart.push( " var e=document.getElementsByTagName('header')[0],d=document.createElement('IMG'); d.src=www_design+'img/may9.png';d.style.position='absolute'; d.style.right='10px'; e.insertBefore(d,e.firstChild); " );
+
+_}
+
+{_SCRIPT_ADD: {httphost}js/kuku.js?test _}
+
+{_SCRIPT_ADD: /dnevnik/2020/03/karantin.js _}
+
+    <title>{admin_name}: {_TITLE:_}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title="{admin_name}" href="{httphost}rss.xml" />
+
+    <link rel="prev" href="{prevlink}" id="PrevLink" />
+    <link rel="hunext" href="{nextlink}" id="NextLink" />
+    <link rel="UpLink" href="{uplink}" id="UpLink" />
+    <link rel="DownLink" href="{downlink}" id="DownLink" />
+</head>
+
+<style>
+
+#container { max-width: 1300px; }
+
+.twoCol .menupng { display:none; margin:0 auto; }
+
+.twoCol #container { width: 100%; margin: 0 auto; text-align: left; padding: 0; position:relative; }
+.twoCol #sidebar1 { margin-top:10px;
+float:left; width:200px; padding: 15px 0; overflow-y:hidden; overflow:auto; text-align:center; background: #ffffff;
+box-shadow: 0px 2px 4px 0px rgba(255,0,0,0.4); border-radius: 7px 7px 7px 7px;
+}
+
+.twoCol #sidebar1 h3, .twoCol #sidebar1 p { margin-left: 10px; margin-right: 10px; }
+
+.twoCol #sidebar1 div { margin-bottom: 15px; font-size:11px; }
+
+.twoCol #mainContent { /* БЛОК ЗАМЕТКИ */
+text-align:justify;
+margin: 0 0 0 200px; /* отступ основного блока на ширину левой колонки */
+padding: 20px 10px 10px 10px;
+border-collapse:collapse;
+}
+
+/*приветствие*/
+.preword{ color:#FF0000; text-align:justify; margin-bottom:15px; font-size:x-small; padding: 0 15px; }
+.header { text-align:center; margin-bottom:30pt; font-size: 16pt; font-weight: bold; }
+.rekomenda { font-size: 13px; font-weight: bold; border: 1px dashed #ccc; margin: 0 10pt 10pt 10pt; padding: 10pt; }
+.rekomenda:before { content:'Страницы, которые привлекли мое внимание за последние дни, рекомендую:'; }
+
+#bodyz { text-align:justify; }
+
+#post { padding: 0px 2%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4em;
+}
+
+#post h1{ text-align:center; font-size:medium; }
+#copyright{ text-align:right; margin-top: 80px; margin-bottom: 50px; padding: 0 2%; }
+#copyright table { margin-top: 20px; }
+#comments{ width:auto; padding: 1% 2% 2% 2%; margin-top: 50px; text-align:justify; border-left: 1px dotted red;}
+
+.item_com{ padding: 3px 10px 2px 40px; }
+.twoCol #mainContent img { max-width: 100%; height: auto; }
+
+/* Медиа-запросы */
+
+@media screen and (max-width: 900px) {
+
+	.everybook { display:none; }
+
+    .twoCol .menupng { display:block; text-align:center;}
+    aside { display: none; }
+
+    .twoCol #sidebar1 div { margin-bottom: 30px; font-size:18pt; max-width: 800px; text-align:center;}
+
+    .twoCol #sidebar1 { float: none;
+width:80%;
+text-align:left;
+margin:50px auto;
+font-size: 16pt; font-weight: bold;
+}
+    .twoCol #mainContent { margin: 0 0 0 0; padding: 20px 10px 0 10px; border-left: none; }
+
+    .twoCol #mainContent img { max-width: 100% !important; height: auto !important; }
+
+    /* Календарь */
+    .cld_top,.cld_days,.cld_red,.cld,.cld_this,.cld_ed {font-size: 20pt; padding:3pt;}
+
+    .twoCol #sidebar1 input { font-size: 50pt; border: 3px solid #ccc; }
+    .c0, .c1, .c2, .c3, .c4, .c5, .c6 { max-width: none; }
+
+    .fakeimg { width: 40px !important; height: 40px !important; max-width:40px !important; max-height:40px !important;}
+    .uimg { width: 80px !important; height: 80px !important; max-width:80px !important; max-height:80px !important;}
+}
+
+@media screen and (min-width: 901px) {
+    aside { display: block !important; }
+}
+</style>
+
+{_NO:
+SCRIPT_ADD: /dnevnik/extended/snow-fall.js
+SIGNAL: redirect=/blocked.htm?redirect_from=http://lleo.me{url}
+SCRIPT_ADD: /dnevnik/2016/01/new_year.js
+STYLE_ADD: http://lleo.me/dnevnik/design/KIRILLIC.css
+SCRIPT_ADD: http://lleo.me/dnevnik/design/KIRILLIC.js
+SCRIPT_ADD: http://lleo.me/dnevnik/2015/12/johntravolta.js
+_}
+
+<body class="twoCol"><div id='mainbody'>
+
+{_UNIC:_}
+
+
+{_NO:
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-49549692-1', 'lleo.me');ga('require','displayfeatures');ga('send','pageview');
+</script>
+
+<!-- Yandex.Metrika counter заебали трекать любые клики на странице, сменил все три true на false с 14/02/2020 -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ym(53083954, "init", { clickmap:false, trackLinks:false, accurateTrackBounce:false });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53083954" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<div>
+<input type='button' style='padding:5px' id='echomsk_button' value='Слушать ЭхоМосквы' onclick="LOADS('/extended/hls.js',function(){echomsk()})" alt='А то, говорят, запретили, ну так вот вам трансляция прямо в браузере'>
+<audio style='display:none' id='echomsk'></audio>
+</div>
+
+_}
+
+<div id="container">
+
+{_SCRIPT_ADD: /dnevnik/design/nez.js_}
+
+<div class='menupng' onclick="var e=document.getElementsByTagName('aside').item(0); e.style.display=(e.style.display=='block'?'none':'block');document.getElementsByClassName('everybook').item(0).style.display='block';">
+<i class='e_mobilemenu'></i>
+<h1>Леонид Каганов: дневник</h1>
+</div>
+
+<aside><div id="sidebar1">
+
+<div><a href="/">
+<center><div style="background:url('//lleo.me/dnevnik/design/userpick/userpick2021.jpg');width:120px;height:159px;border-radius:15px;" title='Дневник Леонида Каганова<br>перейти на главную страницу сайта'></div></center>
+</a></div>
+
+<nav>
+<div><a title='Всплывает окошко со списком заметок,<br>которые ваш браузер ещё не открывал.' href="javascript:majax('okno.php',{a:'notseen',day:30})">нечитанное</a></div>
+
+<div><a title='Перейти на страницу со списком всех заметок.' href='{acc_link}contents'>содержание</a></div>
+
+<div><a title='Скучный документ с правилами этого дневника.' href='{acc_link}whatis'>о дневнике</a></div>
+
+<div><a title='Хотите заказать рекламную статью или обзор?<br>Это возможно, но есть определенные ограничения.<br>Все подробности на странице рекламной политики.' href='/reklama'>реклама в блоге</a></div>
+
+<div><center>{_CALENDAR:_}</center></div>
+
+<!-- div><a title='Перейти на страницу в техническом блоге /blog (вы-то находитесь в блоге /dnevnik), где рассказывается, как можно установить себе мой движок блога (он открытый).' href=/blog/lleoblog>движок сайта</a></div -->
+
+</nav>
+
+<div><INPUT type='text' size='7' style="color: #777777" value="поиск" onclick="majax('okno.php',{a:'search'})"></div>
+
+<div>{_STATISTIC: template = <a title='Заходы на эту страницу по ссылкам<br>и через поисковики.' href="javascript:{majax}">посещений:</a> _} {_COUNTER:_}</div>
+
+<div>{_KTOPOSETIL: podzamok , short , <p class=r><span title='Кто посещал эту страницу поименно?'>посетители</span> _}</div>
+
+
+
+<div class='rama r' style='margin:22px;'><center>
+<b>принтер в уборной</b>
+
+<p class=r>временно выключен в связи с дефицитом в стране бумаги (чековой ленты 80мм)
+
+{_is_admin:
+
+<form onsubmit="ajaxon();AJ('https://home.lleo.me/xprinter.php?src=jura&text='+encodeURIComponent(idd('xprn_txt').value)); return false;">
+<textarea id='xprn_txt' style='width:100%;height:100px'></textarea>
+<p><input type='submit' value='распечатать'>
+</form>
+<p><b>или картинку</b>
+<form>
+<input name="file1[]" size="100" type="file" accept="image/*" onchange="mojax('https://home.lleo.me/xprinter.php?src=jura',{},'','FORM',this.form)">
+</form>
+
+_}
+
+</center></div>{_NO: 
+
+ _}
+
+
+
+
+<div><i class='e_bird16' onclick="majax('editor.php',{a:'rand'})" alt='Птичка Михаила: открыть случайную заметку'></i>   <a href='/dnevnik/rss.xml'><i class='e_rss' title='Мой дневник поддерживает RSS'></i></a></div>
+
+<div>{_NO: PHPEVAL: $o=''; $f='../home/pogodka-spb.htm'; if(@is_file($f)) $o.=@file_get_contents($f); $f='../home/pogodka-msk.htm'; if(@is_file($f)) $o.=@file_get_contents($f); _}</div>
+
+<div class=r>{_PHPEVAL: $i=intval("{_BTCINFO:
+val=USD
+floor=1
+_}");
+$o="<a href='https://lleo.me/btc' alt='График онлайн'>Bitcoin</a>: $i USD<br>ощущается как: ".floor($i*($i>10000?rand(110,140):rand(60,90))/100)." USD</div>";_}
+
+<div class=r id='covid'></div>
+{_SCRIPTS:
+page_onstart.push('doCovid()');
+function doCovid() {
+ function hd(s) { return (1*s>9?''+s:'0'+s) }
+ var d=new Date(); d.setDate(d.getDate()-1);
+ var dat=d.getFullYear()+'-'+hd(d.getMonth()+1)+'-'+hd(d.getDate());
+ AJC('covid_stat',600,'https://api.covid19tracking.narrativa.com/api/'+dat+'/country/russia',function(s,url){ // результат AJAX-запроса
+
+
+try{
+    var dat=url.match(/\d\d\d\d\-\d\d\-\d\d/)[0],p=JSON.parse(s).dates[dat]['countries']['Russia'];
+    zabil('covid','Ковид в России '+dat+'<br>заболели: '+p.today_new_confirmed+'<br>умерли: '+p.today_new_deaths);
+} catch(e){}
+
+
+  }
+ );
+}
+_}
+
+{_NO:
+
+<div><!--LiveInternet counter--><script type="text/javascript"><!--
+new Image().src = "//counter.yadro.ru/hit?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random();//--></script><!--/LiveInternet-->
+<!--LiveInternet logo--><a href="https://www.liveinternet.ru/stat/lleo.me/dnevnik/" target="_blank"><img src="//counter.yadro.ru/logo?38.6" title="LiveInternet" border="0" width="31" height="31"/></a><!--/LiveInternet-->
+</div>
+
+_}
+
+<div><img src='/dnevnik/design/4duk.png' alt='включить радио Чипльдук <a href=http://4duk.ru>4duk.ru</a>' onclick="plays('http://radio.4duk.ru/4duk128.mp3');clean(this);"></div>
+
+<div><a href='/radio' alt='включить мое онлайн радио' target=_blank>радио Рыбий Жир</a></div>
+
+
+
+<div title='Фирма установки пластиковых окон моего друга Василия Ткачева, рекомендую.<br>Если скажете, что от меня и назовете пароль «ллео»,<br>то при любом заказе окон получите сувенир.'>Пластиковые окна:<br><a href='http://oknamigom.ru'>http://oknamigom.ru</a></div>
+
+<div><a href='http://onlime.ru'><img border=0 src='https://lleo.me/dnevnik/2015/03/onlimeru.gif' title='Мой любимый домашний провайдер, через него я хожу в интернет'></a></div>
+
+<!-- КАРАНТИНКИ -->
+{_STYLES:
+.karplace { display:none;text-align:left;align:left;white-space:nowrap; } /* height:500px;overflow:hidden;overflow-x:hidden;overflow-y:scroll; */
+.karzag { display:inline-block;font-family:"comic sans ms";font-size:20px;font-weight:bold; }
+.mtime1 { display:block;position:absolute;top:-12px;right:10px;font-size:7px !important; }
+.ptxt1 { text-align:left; width:180px; font-size:9px !important; position:relative; margin:42px 0px 0px 3px; font-family: "Trebuchet MS", sans-serif; }
+_}{_SCRIPTS:
+
+function d2(s) { return (1*s<10?'0':'')+s; }
+
+function kaload(STIHDAT,STIHDAYS,t) {
+    page_onstart.push("AJC('karantinki_"+STIHDAT+"',600,'/dnevnik/ajax/json.php?a=commentary&fromTime="+(parseInt(new Date().getTime()/1000)-86400*STIHDAYS)+"&limit=100&num="+STIHDAT+"&acn=0&opt=id,Text,Time',function(s){ prnjson1(JSON.parse(s),"+t+");});");
+}
+
+function prnjson1(p,x) { var lastStrokiData='';
+    instemp='<div class="ptxt1"><div class="mtime1"{skobaclick}>{t}</div>{txt}</div>';
+    var s=''; for(var i in p) { // if(in_array(p[i].id,[315955,315939,315938,315937,315936,315935,315934,315933,315932])) continue;
+        if( p[i].Text.substring(0,1) == '#' ) continue;
+        var a=new Date(p[i].Time*1000);
+        var dd=a.getFullYear()+'/'+d2(a.getMonth()+1)+'/'+d2(a.getDate()),mm=d2(a.getHours())+':'+d2(a.getMinutes());
+        if(lastStrokiData==dd) p[i].t=mm; else { lastStrokiData=dd; p[i].t=dd+' '+mm; }
+        p[i].txt=p[i].Text.replace(/\n/g,"<br>");
+        p[i].skobaclick=(adm?" onclick=\"majax('comment.php',{a:'edit',comnu:1,id:"+p[i].id+"});\"":""); s+=mpers(instemp,p[i]);
+    }
+    zabil('pdk1'+x,s); idd('pdk1'+x).style.display='block';
+    setTimeout(function(){zabil('whed'+x,vzyal('whed'+x)+"<img style='position:absolute;z-index:1;top:0px;left:15px;width:56px;opacity:85%;' src='/dnevnik/2020/03/karantin.png'>");},2000);
+}
+
+    var STIHDAT1=4583;
+    kaload(STIHDAT1,7,1);
+
+    var STIHDAT2=4671;
+    kaload(STIHDAT2,7,2);
+
+_}
+{_is_admin: <i class='mv e_true' onclick="majax('comment.php',{a:'comform',id:0,lev:0,comnu:comnum,dat:STIHDAT1})"></i> _}
+<center><div id='whed1' class='karzag animated flip delay-5s slower' {_is_admin: onclick="majax('comment.php',{a:'comform',id:0,lev:0,comnu:comnum,dat:STIHDAT1});">|> _}карантинки</div></center>
+<div id='pdk11' class='karplace' style='text-align:left !important'></div>
+<div class=br>все <a href='/dnevnik/karantinki'>карантинки</a></div>
+<!-- /КАРАНТИНКИ -->
+<!-- 4стишия -->
+{_is_admin: <i class='mv e_true' onclick="majax('comment.php',{a:'comform',id:0,lev:0,comnu:comnum,dat:STIHDAT2})"></i> _}
+<center><div id='whed2' class='karzag animated flip delay-5s slower' {_is_admin: onclick="majax('comment.php',{a:'comform',id:0,lev:0,comnu:comnum,dat:STIHDAT2});">|> _}4стишия</div></center>
+<div id='pdk12' class='karplace' style='text-align:left !important'></div>
+<div class=br>все <a href='/dnevnik/4stih'>четверостишия</a></div>
+<!-- /4стишия -->
+
+{_NO:
+
+INCLUD: gltstat.htm
+
+<div class=br><a href='/kniga?full'>график книги</a></div><!-- img src='/tmp/upload-doc/glt/stat_small.gif' alt="<img src='/tmp/upload-doc/glt/stat.gif'>" -->
+
+
+<div> INCLUD: /var/www/home/dnevnik/tmp/upload-doc/tab/stat.htm</div>
+
+<div title="Удивительные детские прыгунки от Леонида и Ирины Галинских, рекомендую."><a href='https://sb-znatok.ru/active/jamp/jump-acrobat'><img src='/dnevnik/2019/04/acrobat/acrobat.jpg'></a><br>Детские прыгунки Акробат:<br><a href='https://sb-znatok.ru/active/jamp/jump-acrobat'>sb-znatok.ru</a></div>
+<div style='text-align:left;align:left;font-size:8px;padding:5px;'>Ученые в шоке!!! Грибок пройдет за секунду если помазать ноги самым обычным... {_PLAY: https://youtu.be/oaK-ViI1HOs #ЖМИ ЧТОБЫ УЗНАТЬ!!!_}</div>
+<div title="Профессиональные измерительные приборы<br>мой друг одноклассник Сергей Мамаев:<br><img src='/dnevnik/2017/01/lupin/thumb_Lupin2.png'>"><a href='http://eco-e.ru'><img src='/dnevnik/2017/01/lupin/thumb_Lupin2.png'></a><br>Профессиональные измерительные приборы:<br><a href='http://eco-e.ru'>eco-e.ru</a></div>
+
+5 декабря: вернул счетчики
+1 дек 2018 ccccc->ccc
+
+<div title="Грузоперевозки (Москва и межгород),<br>мой друг-одноклассник Алексей Крылов:<br><img src=/dnevnik/2015/10/lewa/lewa2.jpg>">Грузоперевозки Лева Крылов:<br><a href='http://lleo.me/dnevnik/2015/10/21_lewa.html'>+7(963)710-59-34</a></div>
+
+11 января - удалил openstat, не работает, говорят, с сентября
+<!--Openstat--><span id="openstat2191304"><a href='https://rating.openstat.ru/site/2191304'><img title='OpenStat' src='https://openstat.net/i/68.gif'></a></span>
+<script type="text/javascript">
+var openstat = { counter: 2191304, next: openstat };
+(function(d, t, p) {
+var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+})(document, "script", document.location.protocol);
+</script><!--/Openstat-->
+
+
+OTHERBLOGS:
+<p><div class='br' title='Популярный сайт знакомств, который создала команда моего знакомого Леона'>Знакомства в СНГ: <a href='http://rusdate.net'>http://rusdate.net</a></div>
+<p><div class='r' title='Клевый интернет-магазин детских товаров и игрушек Леонида и Ирины.'>Товары для детей:<br><a href='http://sb-znatok.ru'>http://sb-znatok.ru</a></div>
+<p><div class='br' title='Сайт моих знакомых по изделиям из самоцветов и бисера'>Бисер и самоцветы:<br><a href='http://biser.net.ru'>http://biser.net.ru</a></div>
+<p><div class='br' title='а просто так'>Разработка и продвижение сайтов <a href='http://offsky.ru'>offsky.ru</a></div>
+<p><a href='http://slava.soloway.su/rotator/redirect?place_id=333&banner_id=58' target='_blank'><img border=0 src='http://slava.soloway.su/upload/banner-item/origin/100x100_142927445990.gif'></a>
+<a class='br' href='http://koleso-kolesiko.ru/?utm_source=http://lleo.me/&utm_medium=blog&utm_' title='Пушистые новогодние ёлки от Саши Колесникова с доставкой!<br>Пароль «от лео» дает скидку 10%'><img border=0 src='/dnevnik/2016/12/kolesiko.jpg' ><br>Живая датская ёлка на дом</a>
+
+<p class=r style='text-align:justify;'>Данное сообщение (материал) создано и (или) распространено иностранным средством массовой информации, выполняющим функции иностранного агента, и (или)
+российским юридическим лицом, выполняющим функции иностранного агента, и (или) просто каким-то чуваком, которому нравятся дурацкие надписи и (или) мечтать
+о карьере иностранного агента потому что это типа сейчас крутой тренд и (или) хайп.
+
+_}
+
+</div></aside><!--/sidebar-->
+
+
+{msqe}
+
+
+<div id="mainContent">{_NO: PREWORD:_}{_ANOTHER_DATE:_}
+{_PREVNEXT:
+prev = <a href='{prevlink}'><< предыдущая заметка</a>
+next = <a href='{nextlink}'>следующая заметка >></a>
+no =  
+template = <center><table width=98% cellspacing=0 cellpadding=0><tr valign=top><td width=50%><font size=1>{prev}</font></td><td width=50% align=right><font size=1>{next}</font></td></tr></table></center>
+_}
+
+
+<div id="post">
+    <header>{_HEAD:_}</header>
+    <article><div id="bodyz">{_TEXT:_}</div></article>
+</div>
+
+<div id="copyright"><footer>{signature}</footer>
+{_TAGS: template = <div style='font-size: 10pt; text-align:right;'><div class=ll onclick="majax('search.php',{a:'alltag'})">тэги записи:</div> {tags}</div> _}
+{_NO: <div>{_NO: YANDEXCOUNT:_}   {_NO: ADDTHIS:_}</div> _}
+<div style='margin-top:10pt'>{_SHARE:_}</div>
+{_CROSSPOSTED: tmpl=<div class='{net}' style='word-break:break-all'><i>{adminkeys}<a href='{#link}'>{#link}</a></i></div>
+template={_nobr:
+
+<div align=right><table border=0><tr><td align=left>
+<i>Копия заметки в моих аккаунтах соцсетей:</i>
+<br>{tmpl}
+<div><a href='https://www.instagram.com/lleokaganov/'> https://www.instagram.com/lleokaganov</a></div>
+<div>Как читать мой сайт <a href='http://lleo.me/dnevnik/free'>если что</a></div>
+
+</td></tr></table></div>
+
+_}_}
+</div><!--/copyright-->
+
+{_PREVNEXT:_}
+
+<!--Comments --><div id="comments">
+<div style='margin-left:15px;margin-bottom:10px;' class='l r' alt='Сообщите администрации портала о нарушениях владельца этого аккаунта' onclick="majax('mailbox.php',{a:'newform',tmpl:'provider',unic:4})">пожаловаться на эту публикацию администрации портала</div>
+{_REKOMENDA: template=<div style='background: #ffffff; border-radius: 5px;font-size:13px; font-weight:bold; border:1px dashed #ccc; margin: 0 10pt 10pt 10pt; padding: 10pt;'>Страницы, которые привлекли мое внимание за последние дни, рекомендую:<br>{s}<div class='br l' onclick="majax('okno.php',{a:'rekomenda'})">архив ссылок</div></div> _}
+
+{_is_admin:
+<i class='e_ledred' onclick="majax('editor.php',{asave:2,a:'submit',num:'{num}',names:'Comment_view',Comment_view:'off'})" alt='отлючить комментарии'></i>
+<i class='e_ledgreen' onclick="majax('editor.php',{asave:2,a:'submit',num:'{num}',names:'Comment_view',Comment_view:'default'})" alt='включить комментарии'></i>
+<i class='e_ledyellow' onclick="majax('editor.php',{asave:2,a:'submit',num:'{num}',names:'Comment_view',Comment_view:'load'})" alt='убрать комментарии под кнопку'></i>
+_}
+
+{_COMENTS:
+socialmedia=lj:lleo
+off_socialmedia=<p><a href='{0}?mode=reply#add_comment' class='l' style='font-weight:bold;margin:20pt;font-size:16px;' alt='В целях импортозамещения и во исполнение закона 14 № 242-ФЗВ от 21.07.2014<br>все дальнейшие комментарии оставляйте в моем дневнике на сайте Живого Журнала,<br>производящем сбор и обработку персональных данных на территории Российской Федерации.'>Оставить комментарий</a>
+_}
+
+
+</div><!--/Comments-->
+
+
+
+</div><!--/mainContent -->
+<!-- верстку :( --><br class=q />
+
+{_NO: SCRIPTS:
+
+page_onstart.push('visit_go()');
+
+visit_ajax=function(){
+  AJ(www_ajax+'visit_online.php',function(s){
+    s=s.split('\n');
+    var T=s[0]; s.shift();
+
+    var R=[],p,u,i,j;
+    for(i=s.length-1;i>=0;i--) {
+        p=s[i].split(' '),u=p[0],t=p[1];
+        p.shift(); p.shift();
+        p=p.join(' '); if(p=='') p=u;
+        R.push([parseInt((T-t)/3),u,p]);
+    }
+
+    o=[]; for(i=0;i<256;i++)
+            for(j in R) if(R[j][0]==i)
+                o.push("<div style='white-space:nowrap; color:rgb("+R[j][0]+","+R[j][0]+","+R[j][0]+");font-size:10px;display:inline;cursor:pointer;' onclick='kus("+R[j][1]+")'>"+R[j][2]+"</div>");
+
+    zabil('online',"Онлайн "+s.length+': '+o.join(', '));
+  });
+};
+
+visit_go=function() {
+    visit_ajax();
+    setInterval('visit_ajax()',10000);
+};
+
+_}
+
+<div style='margin:20px' id='online'></div>
+
+{_NO: PHPEVAL:
+$f=$GLOBALS['filehost']."tmp/everybook/".date("Y-m-d").".htm";
+return $o=(is_file($f)?"<div class='everybook' style='border-top:1px dotted red;font-size:10px;'><b>книжный сомелье: сегодняшние книжные анонсики c <a href='https://everybook.ru/todays'>Everybook</a></b><p>".file_get_contents($f)."</div>":$f);
+
+
+<div class='everybook' style='border-top:1px dotted red;font-size:10px;'><b>книжный сомелье: анонсы книг, которые я ежедневно сочиняю для проекта <a href='https://everybook.ru/todays'>Everybook</a></b>
+  (смотреть <span class='ll' onclick='everybook_dnevnik_calendar()'>архив</span>)
+<div id='everybook_vitrina'></div>
+</div>
+{ _SCRIPTS:
+
+everybook_dnevnik_calendar=function(){
+    LOADS('/EVERYBOOK/knigi.js?rand=12',function(){
+	wdayw=function(e) { if(e.id) e=e.id; majax('/EVERYBOOK/ajax.php',{a:'dayview',day:e,insert:'everybook_vitrina'}); };
+	th_calendar(getdat().split('-')[0],getdat().split('-')[1],'wday','view');
+    });
+};
+
+D00=function(x) { return (x<10?'0'+x:''+x); } // >
+getdat=function(){
+    var d=new Date();
+    return d.getFullYear()+'-'+D00(d.getMonth()+1)+'-'+D00(d.getDate());
+};
+
+page_onstart.push("majax('/EVERYBOOK/ajax.php',{a:'dayview',day:getdat(),insert:'everybook_vitrina'});");
+
+_}
+
+{_NO: INCLUD: template/_reklamnaya_lirica.htm _}
+
+</div><!--/container-->
+
+</div></body></html>

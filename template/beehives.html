@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset={wwwcharset}" />
+{_SNAPSHOT:_}{_MAIN:_}{_STYLE_ADD: {www_css}beehives.css _}
+<title>{admin_name}: {_TITLE:_}</title>
+
+<meta charset={wwwcharset} />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="{admin_name}" href="{httphost}rss" />
+
+<link rel="prev" href="{prevlink}" id="PrevLink" />
+<link rel="next" href="{nextlink}" id="NextLink" />
+<link rel="UpLink" href="{uplink}" id="UpLink" />
+<link rel="DownLink" href="{downlink}" id="DownLink" />
+</head>
+<body>
+
+<div id="wrap">
+
+<div id="header">
+<h1><a href="{wwwhost}">{admin_name}:</a></h1>
+</div>
+
+<div id="menu">
+<ul>
+<li><a href="#">Блог</a></li>
+<li><a href="#">Обо мне</a></li>
+<li><a href="#">Фото</a></li>
+<li><a href="#">Ссылки</a></li>
+</ul>
+<FORM METHOD=get ACTION={httphost}contents/><INPUT class=t TYPE="text" NAME="search" SIZE=10 VALUE="" MAXLENGTH=160 align=right><INPUT TYPE=SUBMIT VALUE=">"></FORM>
+</div>
+
+<div id="content">
+<div class="right"> 
+
+{_UNIC:_}
+{_PREWORD:_}
+{_PREVNEXT:_}
+<h2>{_HEAD:_}</h2>
+{_TEXT:_}
+{_PREVNEXT:_}
+{_REKOMENDA:_}
+{_COMENTS:_}
+</div>
+
+<div class="left"> 
+<a href="/"><img src="{www_design}userpick.jpg" width=120 height=155 border=0></a><p class=r><b><a href={httphost}>{admin_name}</a></b>
+
+<h2>Категории</h2>
+<ul>
+<li><a href="{wwwhost}contents">содержание</a></li> 
+<li><a href=http://lleo.aha.ru/blog/lleoblog>движок блога</a></li> 
+</ul>
+
+<h2>Архив</h2>
+{_CALENDAR:_}
+
+{_COUNTER:_}
+
+{_STATISTIC:_}
+
+</div>
+
+<br class=q />
+
+</div>
+
+</div>
+
+<div id="footer">| Работает <a href=http://lleo.aha.ru/blog/lleoblog>на движке Леонида Каганова</a> |
+Дизайн <a href="http://rb.atlana.ru/blog">РБ</a> + <a href="http://www.free-css-templates.com/">Free CSS Templates</a> | Благодарности <a href="http://www.legalhelpers.com/chapter-13-bankruptcy/chapter13.html">Chapter 13 Bankruptcy |</a>
+</div>
+
+</body></html>

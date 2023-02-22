@@ -1,0 +1,78 @@
+{_MAIN:_}<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="{wwwcharset}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{_TITLE:{header}_}</title>
+    <meta name="Description" content="{_TITLE:_}" />
+    {_STYLE_ADD: /ALZYMOLOGIST/shave/styles.css_}
+    {_STYLE_ADD: /ALZYMOLOGIST/shave/sys.css_}
+    {_NO: STYLE_ADD: /ALZYMOLOGIST/shave/EN.css_}
+
+    {_NO: SCRIPT_ADD: /ALZYMOLOGIST/shave/js.js_}
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta property="og:url" content="{link}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{_TITLE:_}" />
+    <meta property="og:description" content="{_TITLE:_}" />
+    <meta property="og:image" content="{LINK}" / >
+    <meta property="ia:rules_url" content="{acc_link}whatis" />
+</head>
+<body>
+    <header class="menu">
+        <div class="menu-wrap">
+            <a href='/shave'><img src="/ALZYMOLOGIST/shave/logo.webp" class="logo-img" alt="Logo"></a>
+            <input type="checkbox" id="checkbox">
+            <input type="checkbox" id="checkboxu">
+		<div class='loginmenu'>
+		<ul>
+<!--
+                    <li class='mv0' onclick="majax('login.php',{a:'do_login',opt:'password'})">Login</li>
+                    <li class='mv0' onclick="majax('login.php',{a:'getinfo'})">Settings</li>
+                    <li class='mv0' onclick="majax('login.php',{a:'do_logout'})">Logout</li>
+-->
+                    <li class='mv0' onclick="JA.formLogin()">Login</li>
+                    <li class='mv0' onclick="JA.aboutLogin()">Settings</li>
+                    <li class='mv0' onclick="JA.Logout()">Logout</li>
+		</ul>
+		</div>
+            <nav>
+                <ul class='nobr'>
+
+		    {_is_admin:  <li><a class='mv0' href="#" onclick='myTest()'>Test</a></li> |_}
+
+                    <li>
+<input id='loginfind' type="text" size="5" placeholder="&#128269; users"
+onkeyup='JA.FindKey(this.value)'>&nbsp;<input type='submit' value='Users' onclick="JA.FindKey(idd('loginfind').value)">
+</li>
+                    <li><a href='#' onclick="JA.Friends()">My</a></li>
+
+                    <li>
+<input id='myfind' type="text" size="10" placeholder="&#128269; search"
+onchange='JA.Find(this.value)'>&nbsp;<input type='submit' value='Article' onclick="JA.Find(idd('myfind').value)">
+</li>
+
+
+                    <li><a href="/shave/about">About</a></li>
+
+                    <li><label for="checkboxu"><span>&#128100;<span class='rname'></span></span></label></li>
+                </ul>
+            </nav>
+            <label for="checkbox">
+		<!-- i class='e_mobilemenu menu-icon'></i -->
+		<img class='menu-icon' src='/ALZYMOLOGIST/shave/menu.webp'>
+                <!-- i class="fa fa-bars menu-icon"></i -->
+            </label>
+        </div>
+    </header>
+    <section>
+        <div class="wrapper">
+            <h1>{_HEAD_TXT:_}</h1>
+            <article><div id="bodyz">{_TEXT:_}</div></article>
+        </div>
+    </section>
+
+</body>
+</html>

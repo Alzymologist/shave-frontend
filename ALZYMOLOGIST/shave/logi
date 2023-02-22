@@ -1,0 +1,33 @@
+#!/bin/sh
+
+F=/home/work/www/ALZYMOLOGIST/shave/log.txt
+
+clear
+sudo service php8.1-fpm restart
+rm -f $F
+touch $F
+chmod 666 $F
+tail -f $F
+echo "wait\n"
+# /var/log/nginx/error.log | sed 's/Notice:/\n======> /g'
+#mcedit /home/lleo/bin/hlog
+
+exit
+
+
+function search_podsveti($a) { if(empty($_GET['search'])) return $a;
+        $a=preg_replace_callback("/>([^<]+)</si","search_p",'>'.$a.'<');
+        $a=ltrim($a,'>'); $a=rtrim($a,'<');
+        return $a;
+} function search_p($r) { return '>'.str_ireplace2($_GET['search'],"<span class=search>","</span>",$r[1]).'<'; }
+
+function str_ireplace2($search,$rep1,$rep2,$s){ $c=chr(1); $nashlo=array(); $x=strlen($search);
+        $S=strtolower2($s);
+        $SEARCH=strtolower2($search);
+        while (($i=strpos($S,$SEARCH))!==false){
+                $nashlo[]=substr($s,$i,$x);
+                $s=substr_replace($s,$c,$i,$x);
+                $S=substr_replace($S,$c,$i,$x);
+        } foreach($nashlo as $l) $s=substr_replace($s,$rep1.$l.$rep2,strpos($s,$c),1);
+        return $s;
+} function strtolower2($s){ return strtr(strtolower($s),'ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÛÜÚÝÞß','àáâãäå¸æçèéêëìíîïðñòóôõö÷øùûüúýþÿ'); }

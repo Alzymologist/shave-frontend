@@ -1,0 +1,173 @@
+preword			<div class='preword'>{0}</div>
+preword:search		<p>На странице подсвечен поиск слова "<span class='search'>{search}</span>", кликай, чтобы <a href='{normal}'>переключиться в нормальный режим</a>
+preword:opoznan		<div class=r>Здравствуй, дружище {0}! Я всегда радуюсь, когда ты заходишь почитать мой дневник.</div>
+preword:open		<p>{name?Привет, {name}! ||}По ссылке c <font color=green>{site}</font> тебе открылся мой дневник {time_expirie?(причем, очень старая страница)||}. Тут надо понимать, что это мой личный дневник, он не обязан тебя развлекать, а мои взгляды не обязаны соответствовать твоим. И тогда мы будем друзьями. Спасибо.
+preword:poisk		{name?Какая встреча, {name}!<p>||}Ищешь через {site} всякую ерунду типа "<b><u>{string}</u></b>"? Поисковик привел тебя в мой личный дневник.{time_expirie? Причем, это очень старая заметка.||}
+preword:read		{name?Какая встреча, {name}!<p>||}Читаешь на сайте {site} всякие статейки типа "<b><u>{string}</u></b>"? Ну-ну, {site} - дело хорошее. Рад, что ты попал в мой личный дневник.{time_expirie? Но учти - это очень старая заметка.||}
+preword:download	<p>Теперь насчет "качать". Здесь - личный дневник, а не файлопомойка. Если тут упоминались какие-то фильмы и песни, то не потому, что скачать их можно прямо здесь. И прислать лично вам эти файлы я тоже не могу. Спрашивайте на тематических форумах.
+
+login:delmud		Удалить все комментарии мудака в количестве {0}?
+
+obracom:click_this	Click to show here!
+
+Comments:not_found	error: comment does not exist
+Comments:not_own	Do you want to edit a differnt person's comment?
+Comments:foto:musor	Wrong format?<br>Allowed formats: {0}
+Comments:empty_comm	Where is the comment?
+Comments:empty_name	You forgot to sign up.
+
+Commentpanel:loadfoto	picture:
+Commentpanel:html	html:
+Comment:optionspanel	<span title='additional toolbar' class=ll style='font-size:8px;'>options</span>
+
+Commentpanel:screen	for admin
+Commentpanel:scr	hidden
+Commentpanel:screen_title	only the admin can see the selected text
+Commentpanel:scr_title		only the admin and his friends can see the selected text
+
+zopt:default		default
+
+zopt:include		служебное старое поле, больше не используется
+zopt:Comment_foto_logo	подпись фоток в комментариях
+zopt:Comment_foto_x	обжимание фоток в комментариях по большой стороне в пикселах
+zopt:Comment_foto_q	качество Jpeg фоток в комментариях
+
+zopt:Comment_media	Показывать медиа в комментариях
+zopt:Comment_media:all	objects
+zopt:Comment_media:no	links
+zopt:Comment_media:my	объекты моего сайта
+
+zopt:Comment_view	Выводить комментарии
+zopt:Comment_view:on		все
+zopt:Comment_view:off		нет
+zopt:Comment_view:rul		важные
+zopt:Comment_view:load		кнопку
+zopt:Comment_view:timeload	поначалу
+
+zopt:Comment_write	Принимать комментарии
+zopt:Comment_write:on		любые
+zopt:Comment_write:off		нет
+zopt:Comment_write:friends-only	друзей
+zopt:Comment_write:login-only	залогиненных
+zopt:Comment_write:timeoff		поначалу
+zopt:Comment_write:login-only-timeoff	поначалу от залогненных
+
+zopt:Comment_screen		hide comments
+zopt:Comment_screen:open		don't hide
+zopt:Comment_screen:screen		все
+zopt:Comment_screen:friends-open	кроме друзей
+
+zopt:Comment_tree	Лента комментариев
+zopt:Comment_tree:1	форум
+zopt:Comment_tree:0	гостевая
+
+zopt:autoformat		Автоформатирование
+zopt:autoformat:p	да
+zopt:autoformat:no	нет
+zopt:autoformat:pd	отступ
+zopt:autoformat:md      Markdown
+
+zopt:template		Chose template /template/*.html
+
+zopt:autokaw		автозамена кавычек и тире
+zopt:autokaw:auto	да
+zopt:autokaw:no		нет
+
+confirm_del		Are you sure you want to delete this?
+
+Editor:tags_alt		Тэги заметки по первому разу перечисляем через запятую, а если они уже использовались - кликаем сюда и просто выбираем из списка.
+Editor:tags		Тэги:
+Editor:sym		букв: {0}
+Editor:new_exist	Заметка с адресом {0} уже существует!
+Editor:wrong_data	Неверный адрес заметки! Этот адрес - то, что люди станут набирать в строке браузера после {0}, он не может быть пустым (тогда назовите страницу index.htm), допустимы только латинские буквы, цифры и символы -_./
+Editor:newz		новая заметка
+Editor:change_data	change adress
+Editor:delz		удалить заметку
+Editor:show_panel	панель инструментов
+Editor:settings		all options
+Editor:autopost		опции автопостинга
+Editor:dostup		Доступ заметки:<dd>красный - админ<dd>желтый - друзья<dd>зеленый - все
+
+Editor:ljpost		Post to LiveJournal
+Editor:fidopost		Post to FIDO
+Editor:twitterpost	Post to Twitter
+
+twitter:notkey		Пропишите ключи в переменную `twitter`!
+twitter:notpost		Эта заметка закрытая, согласно ее опциям.
+twitter:posted		Sent to Твиттер!
+
+ljpost:err0	Сперва надо заметку сохранить!
+ljpost:notfound	Такой заметки нет!
+ljpost:found	Эта заметка уже была запощена, ее адрес: <a href='{0}'>{0}</a>
+ljpost:notlogpas	В config.php пропишите логин и пароль LJ:<br>$admin_ljuser='lleo-kaganov';<br>$admin_ljpass='vd1gTH6s';
+ljpost:error	При постинге в LiveJournal произошла ошибка:
+ljpost:hsuccess		готово
+ljpost:postdone		Заметка доступна в LiveJournal по адресу:<br><a href='{0}' target='_blank'>{0}</a>
+ljpost:editdone		Заметка в LiveJournal изменена, адрес прежний:<br><a href='{0}' target='_blank'>{0}</a>
+ljpost:confirm		Запостить эту заметку в LiveJournal?
+
+comm:ostalnye		 others
+comm:off		<p>Comments for this page are turned off at the moment, I hope for you understanding.
+comm:friends_only	<p>Only friends can leave a comment on this page (for example, you, {0}).
+comm:login_only		<p>You can only leave comments after you logged in.<br>You can login through social media<span class='ll' {majax}>here</span><br>Or you can login in your<span class=ll onclick="majax('login.php',{a:'getinfo'})">personal space</span> on this site: come up with your username / password and go through the email confirmation process.<br>Perhaps there are notes somewhere on the site where any passer-by can write comments, but here you have to log in.
+comm:login_only_done	<p>You are logged in as {0}, you can leave comments.
+comm:disabled		<p>Comments on this post were automatically disabled because more than {1} days have passed or the number exceeded {2}. But if something is important, you can always write me an email: <a href=mailto:{mail}>{mail}</a>
+comm:disabled_login	<p>Comments on this post were initially allowed only for people who logged in, but they automatically turned off, because more than {1} days have passer or the number of visitors exceede {2}. But if something is important, you can always write me an email: <a href=mailto:{mail}>{mail}</a>
+comm:screen		<p>Comments on this post are hidden - they will be visible only to you and me.
+comm:screen_nofriend	<p>Comments on this post are hidden, but your friends will be able to see them.
+comm:comment_this	<div id='commpresent' class='l' style='font-weight: bold; margin: 20pt; font-size: 16px;' {majax}>Leave a comment</div>
+comm:future		<blockquote style='border: 3px dotted rgb(255,0,0); padding: 2px;'><font size=2>The note is dated with a future date, and this simply means that the past days are all occupied, but I still wanted to post the material.</font></blockquote>
+
+comm:page		<div style='margin: 50px;'>{0}</div>
+comm:button		<input TYPE='BUTTON' VALUE='Комментарии{dopload}: {podzamok?|открытых|} {idzan}' {majax}>
+comm:nobutton		Комментарии{dopload} {podzamok?|открытых|} {idzan}:
+
+comm:s			<div class=r style='margin: 50px;'>{0}</div>
+comm:pro		<div id=0>{0}<div></div></div>
+
+comm:nocomments		<p class=z>no comments or only hidden comments
+comm:itogo		<center><p class=br>total comments: {nmas}</p>{u?<p>open comments are shown - <span {majax}>show all</a>||}</center>
+
+comm:k			 <input type='button' value='{n}' {majax}{u? disabled='disabled'||}>
+
+exit_no_save		Exit without saving?
+save_before_exit	Save before exiting?
+ctrl+Enter		ctrl+Enter
+shift+Enter		shift+Enter
+Save+exit		Save and exit
+Save			Save
+saved			Saved!
+save_not_need		- no changes -
+
+mailbox:loginlevel3	Until you are fully logged in,<br>you cannot write personal letters on the site -<br>only recieve and reply<p>You can log in in your <a href="javascript:majax('login.php',{a:'getinfo'})">personal register</a>
+mailbox:wherethetext	Where is the text?
+error:unic0		Error: unic number cannot equal 0.
+
+golos:vote			Vote
+golos:total			Total votes
+
+Comm:Deltroll:title	Только для подзамков:<br>забанить свежего тролля<br>и удалить все его комментарии?
+Comm:Deltroll:button	Ban?
+Comm:Deltroll:confirm	Confirm ban?
+Comm:screen			hide
+Comm:mail:title			write
+Comm:whois:country:title	Where is this person writing from?
+
+comm:window:comment	new comment
+comm:enter_name		enter your name:
+comm:login:title	Quick login<br>without leaving the page
+comm:login		or login
+comm:close_wo_save	Close without saving?
+comm:first_visit	first visit<br>
+comm:antibot		antibot test:
+comm:mail:title		If someone answers you,<br>the answer will be redirected to {#mail}<br>But for them to arrive,<br>go to your account card <br>and check the boxes `присылать ответы`<br>and `подтвердить email`
+
+login:remember		Do you remember your password?
+login:login		login:
+login:password		password:
+login:restore:title			password recovery procedure via email <br>you need to remember your login or email 
+login:restore:forget_password		I do not remember my password 
+login:restore:try_restore_password	Let's try to recover the password: 
+login:restore:by_login			I remembre the login:
+login:restore:by_email			or I remember the email:
+

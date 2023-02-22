@@ -1,0 +1,19 @@
+highcharts.com
+rgraph.net
+RGraph.SVG
+revolvermaps.com
+jquery.com
+/*lleo*/
+
+<![CDATA[ */(function(d,s,a,i,j,r,l,m,t)	# Какой-то антисканинг email от Cloudflare: придурки в 21 веке
+{mod:'WEBINDEX',a:'ask'				# какая-то моя херь от движка: majax(module.php,{mod:WEBINDEX,a:ask...
+scr_detect_all					# это к нашему проверочному скрипту
+var uc=						# таблица переменных движка
+var openstat					# переменные счетчика openstat
+idd('loginobr').onclick				# блок логина движка loginobr
+i['GoogleAnalyticsObject']=r;			# счетчик GoogleAnalytic
+//www.google-analytics.com/			# скрипт GoogleAnalytic
+//counter.yadro.ru/				# счетчик counter.yadro.ru
+//mc.yandex.ru/metrika/				# Скрипт Яндекс-метрики
+function(m,e,t,r,i,k,a)				# Вызов Яндекс-метрики
+openstat.net/					# счетчик openstat.net

@@ -1,0 +1,22 @@
+<div class='chat0'><div class='{?my:|0:chatfr|*:chatto|?}' id='mmsg{id}'>
+
+{?my:
+0:{?img:|:|*:<img onclick="majax('login.php',{a:'getinfo'})" style="cursor:pointer;height:43px !important;width:43px !important;object-fit:cover;border-radius:50%;" src="{#img}" align='right'>?}
+*:
+?}
+
+<div class=r>
+{?answerid:|0:|*:<i onclick="majax('mailbox.php',{a:'parent',id:{#id}});this.style.display='none';" class='e_expand_plus mv'></i>|?}{#n}.
+<b>{?box:|in:FROM|*:TO|?}:</b> <div class='ll' onclick="majax('login.php',{a:'getinfo',unic:{#u}})" title="{IP}<br>{#BRO}<br>{#whois}">{name}</div>
+</div>
+
+<br><div style='max-width:640px;'>{text}</div>
+
+<br><div>
+{?box:
+in:<input type='button' alt='ANSWER' class='r' value='ANSWER' onclick="majax('mailbox.php',{a:'answer',id:'{#id}'})">&nbsp;{?timeread0:|0:<input title='áîëüøå íå ïîêàçûâàòü êàê íîâîå' class='r' type='button' value='ÏÐÎ×ÈÒÀÍÎ' onclick="majax('mailbox.php',{a:'readed',id:'{#id}'})">|*:<span class='br' style='color:#888;' title='{#timeread}'>{#timeread}</span>|?}&nbsp;<i class='e_remove mv' alt='DELETE' onclick="majax('mailbox.php',{a:'delete',id:'{#id}'})"></i>
+*:<span class='br' style='color:#888;'>{?timeread0:|0:pending&nbsp;<i class='e_remove mv' alt='delete' onclick="majax('mailbox.php',{a:'delete',id:'{#id}'})"></i>|*:{#timeread}&nbsp;<i class='e_remove mv' alt='ÓÄÀËÈÒÜ' onclick="majax('mailbox.php',{a:'delete',id:'{#id}'})"></i>|?}</span>
+?}
+</div>
+
+</div></div>

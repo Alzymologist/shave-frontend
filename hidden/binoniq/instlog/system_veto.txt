@@ -1,0 +1,9 @@
+config.php
+log/
+tmp/
+user/
+hidden/
+design/e3/pre/
+design/e2/pre/
+binoniq/ico/
+fido/

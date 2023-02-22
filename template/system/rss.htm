@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='{wwwcharset}'?>
+<rss version='2.0' xmlns:ya='http://blogs.yandex.ru/yarss/' xmlns:wfw='http://wellformedweb.org/CommentAPI/'>
+
+<channel>
+  <title>{title}</title>
+  <lastBuildDate>{lastBuildDate}</lastBuildDate>
+  <link>{httphost}</link>
+  <description>{admin_name}: блог</description>
+  <generator>Binoniq 3.0</generator>
+  <wfw:commentRss>{httphost}rssc</wfw:commentRss>
+  <ya:more>{httpsite}{mypage}?skip={SKIP}</ya:more>
+  <image>
+    <url>{httphost}design/userpick.jpg</url>
+    <width>120</width>
+    <height>155</height>
+  </image>
+
+{ITEMS}
+
+</channel>
+</rss>

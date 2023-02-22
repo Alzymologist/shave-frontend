@@ -1,0 +1,29 @@
+var o="{?njsn:
+<table border=0><tr valign=top><td>
+<form class='chat_form' onsubmit="return Edit.SEND.MAIL(this,{unicto:'{unicto}',answerid:'{answerid}',id:'{id}'})">
+<div>
+<i class='knop e_nbsp' onClick="Fti(this,'{?chr:160?}{select}')"></i>
+<i class='knop e_copy' onClick="Fti(this,'{?chr:169?}{select}')"></i>
+<i class='knop e_mdash' onClick="Fti(this,'{?chr:151?}{select}')"></i>
+<i class='knop e_ltgt' onClick="Fti(this,'{?chr:171?}{select}{?chr:187?}')"></i>
+<i class='knop e_bold' onClick="Fti(this,'[b]{select}[/b]')"></i>
+<i class='knop e_italic' onClick="Fti(this,'[i]{select}[/i]')"></i>
+<i class='knop e_strikethrough' onClick="Fti(this,'[s]{select}[/s]')"></i>
+<i class='knop e_underline' onClick="Fti(this,'[u]{select}[/u]')"></i>
+<div style='display:inline-block;font-size:8px;overflow:hidden;margin-left:40px'>
+<input class='files' name='file1[]' type='file' multiple accept='image/"+"*,audio/"+"*,video/"+"*' title='загрузить одну или сразу несколько фоток' onchange="Edit.SelectFile(this)">
+</div>
+{?text:
+:
+*:<div><notextarea name='orig' style='border: 1px dotted #ccc; margin:0; padding:0;' disabled cols=80 rows=2>{#text}</notextarea></div>
+?}
+<div><textarea name='text' style='border: 1px dotted #ccc; margin:2px 0 4px 0; padding:5px;' onkeydown="Edit.keydown(this)" rows='10'>{#mytext}</textarea></div>
+<p><input type='submit' value='SEND' title='Ctrl+Enter'>
+</form>
+</td></tr>
+<tr><td valign=top><div class='ImageLoadArea'></div></td></tr>
+</table>
+?}"
+
+ohelpc('{hid}',"To: {to}",o);
+Edit.Start('{hid}');

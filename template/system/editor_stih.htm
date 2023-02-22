@@ -1,0 +1,82 @@
+get_edit_width=function(){ var W=(0.8*'{W}')||getWinW(); W=Math.min(W,1300); return Math.floor(W*0.90); };
+get_edit_height=function(){ var H=(0.8*'{H}')||getWinH(); H=Math.min(H,1300); return Math.floor(H*0.80); };
+
+window.onbeforeunload=function(x){ var e=idd('editor{num}_Body'); return (e && e.value!=e.defaultValue ? "”йти со страницы, потер€в несохраненный текст?" : null); };
+
+var autosave_k=0,nesave=1;
+autosave=function(e){ if(++autosave_k>{autosave_count}){ autosave_k=1; save1(e); } };
+
+setTags=function() {
+    var e=idd('editor{num}_form');
+    var ch=e.Header.value.substring(0,1).toUpperCase();
+    var c=e.Body.value.substring(0,1).toUpperCase();
+    var t=['стихи'];
+    var y=e.Date.value.match(/(\d{4})/)[1];
+    if(ch) t.push('1'+ch);
+    if(c) t.push(c);
+    if(y) t.push(y);
+    e.tags.value=t.join(',');
+};
+
+savea=function(e,num){ setTags();
+    l_save('scroll'+num,idd('editor'+num+'_Body').scrollTop);
+    nesave=0; clean('alltags_editor'+num);
+    var e=find_form(e);
+    var ara=get_pole_ara(e);
+    return ajaxform(e,'editor.php',{a:'submit',asave:0,autopost:1,names:ara.names});
+};
+
+save1=function(e){
+    if(e.defaultValue!=e.value) {
+	e.defaultValue=e.value;
+	var a={a:'submit',num:e.form.num.value,names:e.name,asave:1}; a[e.name]=e.value;
+	setTimeout(function(){if(nesave)majax('editor.php',a)},10);
+    }
+};
+
+
+setkey('Escape','',function(e){ if(T.value==T.defaultValue || confirm('{?LL:exit_no_save?}')) clean('editor{num}'); },false,1);
+setkey('Enter','ctrl',function(e){savea(idd('editor{num}_form'),'{num}')},false,1);
+
+    setkey('Digit8','alt',function(e){ ti('editor{num}_Body','{?chr:171?}{select}{?chr:187?}') },true,1);
+    setkey('Digit9','alt',function(e){ tin('editor{num}_Body','{?chr:171?}')},true,1);
+    setkey('Digit0','alt',function(e){ tin('editor{num}_Body','{?chr:187?}')},true,1);
+    setkey('Space','ctrl',function(e){ tin('editor{num}_Body','{?chr:160?}')},true,1);
+    setkey('Minus','alt',function(e){ tin('editor{num}_Body','{?chr:151?}')},true,1);
+
+helpc('editor{num}',"
+<div style='padding:5px;width:"+get_edit_width()+"'>
+
+<form style='margin:0 0 0 0' id='editor{num}_form' style='margin:5px;'>
+<input type='hidden' name='num' value='{num}'>
+<input type='hidden' name='Access' value='all'>
+
+<table width=100% border=0 cellspacing=0 cellpadding=0><tr>
+<td width=50% align='left'><!-- Header --><input class='r' onkeyup='setTags()' onchange='save1(this)' type='text' name='Header' value='{#njsn#:Header}' maxlength='255' style='width:100%' placeholder='название стиха'></td>
+<td width=25% align='center'><!-- Date -->{?num:|0:<input onkeyup='setTags()' class='r' type='text' name='Date' value='{#Date}' maxlength='80' style='width:100%' alt='адрес заметки'>|*:<span style='font-size:16pt;'><b>{#Date}</b></span>|?}</td>
+<td width=25% align='right'><!-- tags --><input class='r' onchange='save1(this)' type='text' name='tags' id='tags_editor{num}' value='{#tags}' style='width:100%' alt='тэги' placeholder='стихи'></td>
+</tr></table>
+
+<p><textarea style='width:100%;height:"+get_edit_height()+"px;font-size:15pt;' onchange='save1(this)'  onkeyup='setTags()' onkeydown='autosave(this)' id='editor{num}_Body' name='Body' placeholder='тест стиха'>{#njsn#:Body}</textarea>
+
+<p><input style='padding:10pt' type='button' onclick=\"savea(this,'{num}')\" title='{?LL:shift+Enter?}' value='ќпубликовать'>
+
+<div style='display:none' align=right>
+</form>
+</div>");
+
+var T=idd('editor{num}_Body'),isc=l_read('scroll{num}');
+T.focus();
+if(isc===false) isc=0; var TAscroll=function(){ T.scrollTo(0,isc); removeEvent(T,'scroll',TAscroll); }; addEvent(T,'scroll',TAscroll);
+/*setTimeout(function(){T.scrollTo(0,isc)},10);*/
+
+var t=idd('editor{num}_Body').form.tags;
+if(t.value=='') t.value='стихи';
+
+fclipboard=function(e){ if(!idd(e+'_Body')) return;
+	var m=l_read('clipboard_mode'); if(m!='') {
+	    if(m=='Copy link') ti(e+'_Body',"<a href='"+l_read('clipboard_link')+"'>{select}"+l_read('clipboard_text')+"</a>");
+	    else if(m=='plain') ti(e+'_Body',l_read('clipboard_text'));
+	    l_save('clipboard_mode','');
+	} setTimeout(function(){fclipboard(e);},1000);
+}; fclipboard('editor{num}');

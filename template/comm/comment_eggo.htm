@@ -1,0 +1,31 @@
+<div class="comment">
+	<div class="bg">{paren}
+
+		<div class="clearfix">
+			<div class="info"><span class="browser safari">{#BRO} {#whois}</span> <a class='noa' href='#{id}' onclick='kl(this)' title='link'>{date} {datetime}</a></div>
+			<div class="user">
+				<div class="rating"><div class='rul{rul}' onclick='rul(this);'></div>
+<a class="blue" href="javascript:kmi(this);void(0);">- {#golos_min}</a> <a class="red" href="javascript:kpl(this);void(0);">+ {#golos_plu}</a></div>
+				{?mail:|:|yes:<a class="mess"></a>?}				
+<div class=cnam onclick='kus({unic})'>
+{?ifpodzamok:|1:{?capchakarma:|0:|1:|*:<div class=kr>{capchakarma}</div>?}|:?}
+{?ifpodzamok:|1:{?admin:|user:|:<img src='http://lleo.me/blog/design/e/podzamok.gif'>?}|:?}
+{name}</div>
+</div>
+		</div>
+		{?img:|:|*:<div class="ava"><img src='{#img}' align='right' style='max-width:150px;max-height:150px'></div>?}		
+		<div class="text">{text}</div>
+		<!-- end .text--> 
+<div class=kn>
+{?kn_answer:1:<div class=ka onclick='ka(this)'></div>|0:?}
+{?admin:1:<div class='ko{ans}' onclick='ko(this)'></div>|0:?}
+{?kn_del:1:<div class=kd onclick='kd(this)'></div>|0:?}
+{?kn_edit:1:<div class=ked onclick='ked(this)'></div>|0:?}
+{?kn_screen:1:<div class='ks{scr}' onclick='ksc(this)'></div>|0:?}
+</div>
+
+	</div>
+	<!-- end .bg--> 
+	
+	<span class="toggler">Комментарий скрыт</span> </div>
+<!-- end .comment-->

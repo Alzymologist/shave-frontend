@@ -1,0 +1,15 @@
+<html><body>
+<script>
+setTimeout(function(){document.querySelector('#tbl').style.display='none';},500);
+var v=document.location.search;
+v=v.replace(/^\?*[\d+\.]+\-/g,'');
+v=decodeURI(v);
+window.localStorage.setItem('DOIS',v);
+</script>
+
+<table id='tbl' width='100%' height='100%' border='0'>
+<tr align='center' valign='center'><td>
+<span style='background:red;color:black;border-radius:20px;font-size:60px;padding:60px'>Saved</span>
+</td></tr></table>
+
+</body></html>

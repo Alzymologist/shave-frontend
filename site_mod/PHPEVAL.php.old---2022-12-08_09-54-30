@@ -1,0 +1,22 @@
+<?php
+
+function PHPEVAL($e) {
+
+// if($GLOBALS['ADM']) return onlyroot(__FUNCTION__.' '.h($e),1);
+
+echo "[[[[[[[[[[[\n\n\n".$e."\n\n\n]]]]]]]]]]]]]";
+
+    if(($ur=onlyroot(__FUNCTION__.' '.h($e),1))) return $ur;
+    try {
+	$o='';
+    echo("|".gettype($e)."|$e|");
+ $result = eval($e);
+//    } catch (ParseError $e) {
+    } catch (Exception $e) {
+	$o='Error PHPEVAL: '.$e->getMessage();
+    }
+
+    return $o;
+}
+
+?>
